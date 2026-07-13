@@ -1,0 +1,71 @@
+<mvc:View
+    controllerName="nwproductdata.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+    >
+        <content>
+		<Button text="Click Me" press="onButtonPress" />
+        <Button text="To View 2" press="_toView2" />
+            <Table id="idProductsTable" items="{prod>/}">
+                <columns>
+                    <Column>
+                        <Text text="ProductID" />
+                    </Column>
+                     <Column>
+                        <Text text="ProductName" />
+                    </Column>
+                     <Column>
+                        <Text text="SupplierID" />
+                    </Column>
+                     <Column>
+                        <Text text="CategoryID" />
+                    </Column>
+                     <Column>
+                        <Text text="QuantityPerUnit" />
+                    </Column>
+                     <Column>
+                        <Text text="UnitPrice" />
+                    </Column>
+                     <Column>
+                        <Text text="UnitsInStock" />
+                    </Column>
+                     <Column>
+                        <Text text="UnitsOnOrder" />
+                    </Column>
+                     <Column>
+                        <Text text="ReorderLevel" />
+                    </Column>
+                     <Column>
+                        <Text text="Discontinued" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{prod>ProductID}" />
+                            <Text text="{prod>ProductName}" />
+                            <Text text="{prod>SupplierID}" />
+                            <Text text="{prod>CategoryID}" />
+                            <Text text="{prod>QuantityPerUnit}" />
+                            <!-- <Text text="{prod>UnitPrice}" /> -->
+                            <ObjectStatus
+							class="sapUiSmallMarginBottom"
+							text="{prod>UnitPrice}"
+							icon="{= ${prod>UnitPrice} > 50 ? 'sap-icon://sys-enter-2' : 'sap-icon://sys-cancel' }"
+							state="{= ${prod>UnitPrice} > 50 ? 'Error' : 'Success' }" />
+                            <Text text="{prod>UnitsInStock}" />
+                            <Text text="{prod>UnitsOnOrder}" />
+                            <Text text="{prod>ReorderLevel}" />
+                            <Text text="{prod>Discontinued}" />
+
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>
