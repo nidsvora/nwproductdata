@@ -1,0 +1,14 @@
+<mvc:View
+    controllerName="nwproductdata.controller.View2"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+>
+    <Page
+        id="page2"
+        title="{i18n>title}"
+    >
+        <content>
+		<Text text="This is View 2" />
+        </content>
+    </Page>
+</mvc:View>
